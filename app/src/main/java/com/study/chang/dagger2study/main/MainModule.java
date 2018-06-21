@@ -12,7 +12,7 @@ public class MainModule {
     @Provides
     MainBean provideMainBean(){
         MainBean mainBean = new MainBean();
-        mainBean.setDesc("Sam Smith");
+        mainBean.setDesc("Smith Wang");
         return mainBean;
     }
 
