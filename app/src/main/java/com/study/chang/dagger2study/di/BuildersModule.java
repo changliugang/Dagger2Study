@@ -1,33 +1,22 @@
 package com.study.chang.dagger2study.di;
 
-import android.app.Activity;
-
 import com.study.chang.dagger2study.login.LoginActivity;
-import com.study.chang.dagger2study.login.LoginComponent;
 import com.study.chang.dagger2study.main.MainActivity;
-import com.study.chang.dagger2study.main.MainComponent;
+import com.study.chang.dagger2study.main.MainModule;
 
-import dagger.Binds;
 import dagger.Module;
-import dagger.android.ActivityKey;
-import dagger.android.AndroidInjector;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * @author 2018/6/20 17:20 / changliugang
  */
-@Module(subcomponents = {MainComponent.class, LoginComponent.class})
+@Module
 public abstract class BuildersModule {
 
-    @Binds
-    @IntoMap
-    @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindMain(MainComponent.Builder builder);
+    @ContributesAndroidInjector(modules = MainModule.class)
+    abstract MainActivity mainActivityInjector();
 
-    @Binds
-    @IntoMap
-    @ActivityKey(LoginActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindLogin(LoginComponent.Builder builder);
-
+    @ContributesAndroidInjector(modules = MainModule.class)
+    abstract LoginActivity loginActivityInjector();
 
 }
