@@ -5,15 +5,13 @@ import android.widget.TextView;
 
 import com.libs.chang.loglib.Loglg;
 import com.study.chang.dagger2study.AppBean;
+import com.study.chang.dagger2study.BaseActivity;
 import com.study.chang.dagger2study.R;
 import com.study.chang.dagger2study.main.MainBean;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
-import dagger.android.support.DaggerAppCompatActivity;
-
-public class LoginActivity extends DaggerAppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @Inject
     MainBean mMainBean;
@@ -23,7 +21,6 @@ public class LoginActivity extends DaggerAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 

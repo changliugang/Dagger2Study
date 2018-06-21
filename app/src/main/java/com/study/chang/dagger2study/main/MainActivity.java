@@ -7,19 +7,17 @@ import android.widget.TextView;
 
 import com.libs.chang.loglib.Loglg;
 import com.study.chang.dagger2study.AppBean;
+import com.study.chang.dagger2study.BaseActivity;
 import com.study.chang.dagger2study.R;
 import com.study.chang.dagger2study.login.LoginActivity;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
-import dagger.android.support.DaggerAppCompatActivity;
-
 /**
  * 使用Dagger.Android注入Android核心类（Activity为例）和Fragment演示
  *
  */
-public class MainActivity extends DaggerAppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Inject
     MainBean mMainBean;
@@ -29,7 +27,6 @@ public class MainActivity extends DaggerAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
