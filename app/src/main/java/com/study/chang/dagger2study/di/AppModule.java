@@ -1,4 +1,6 @@
-package com.study.chang.dagger2study;
+package com.study.chang.dagger2study.di;
+
+import com.study.chang.dagger2study.AppBean;
 
 import javax.inject.Singleton;
 

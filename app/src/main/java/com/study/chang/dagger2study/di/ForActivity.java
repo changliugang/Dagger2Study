@@ -1,4 +1,4 @@
-package com.study.chang.dagger2study;
+package com.study.chang.dagger2study.di;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
